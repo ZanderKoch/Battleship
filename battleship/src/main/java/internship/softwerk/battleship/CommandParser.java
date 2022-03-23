@@ -7,14 +7,21 @@ import java.util.Scanner;
  * @author Zander Koch
  */
 public class CommandParser {
-    
-    
     public static void main(String[] args) {
         Printer.printIntroduction();
         boolean isDeploying = true;
         
-        Scanner scanner = new Scanner(System.in);
-        boolean quitting = false;
         
+        Scanner scanner = new Scanner(System.in);
+        boolean isQuitting = false;
+        while (!isQuitting) {            
+            String input = scanner.nextLine();
+            
+            
+            if (input.equalsIgnoreCase("quit")) {
+                isQuitting = true;
+                return;
+            }
+        }
     }
 }
