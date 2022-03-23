@@ -1,17 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package internship.softwerk.battleship;
 
+import java.util.Scanner;
+
 /**
- *
+ * Main program class, continually processes text commands entered by the user
  * @author Zander Koch
  */
 public class CommandParser {
-
+    
+    
     public static void main(String[] args) {
+        Printer.printIntroduction();
+        boolean isDeploying = true;
+        
+        Scanner scanner = new Scanner(System.in);
+        boolean quitting = false;
         
     }
 }
