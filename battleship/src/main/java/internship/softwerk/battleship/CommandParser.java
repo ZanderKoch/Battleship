@@ -11,6 +11,7 @@ public class CommandParser {
         Printer.printIntroduction();
         boolean isDeploying = true;
         
+        GameState gameState = GameState.getInstance();
         
         Scanner scanner = new Scanner(System.in);
         boolean isQuitting = false;
