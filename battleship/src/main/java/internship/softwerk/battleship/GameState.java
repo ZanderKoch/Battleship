@@ -7,6 +7,11 @@ package internship.softwerk.battleship;
  */
 public class GameState {
     private static GameState instance;
+    
+    private static Player player1 = new Player();
+    private static Player player2 = new Player();
+    private Player activePlayer = player1;
+    
 
     private GameState() {
         
