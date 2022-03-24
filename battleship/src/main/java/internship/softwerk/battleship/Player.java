@@ -7,7 +7,7 @@ import java.util.HashMap;
  * @author Zander Koch
  */
 public class Player {
-    private String name;
+    private final String name;
     private HashMap<String,String> myGrid;
     private HashMap<String,String> hitOrMissGrid;
     
@@ -18,5 +18,9 @@ public class Player {
     
     private void initializeGrids(){
         
+    }
+
+    public String getName() {
+        return name;
     }
 }
