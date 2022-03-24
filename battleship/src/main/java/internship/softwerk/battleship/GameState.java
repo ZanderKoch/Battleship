@@ -23,6 +23,8 @@ public class GameState {
         }
         return instance;
     }
-    
-    
+
+    public Player getActivePlayer() {
+        return activePlayer;
+    }    
 }
