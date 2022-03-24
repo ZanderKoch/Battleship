@@ -51,7 +51,6 @@ public class CommandParser {
                 } else {
                     //print and error message
                 }
-                
             }
         }
     }
@@ -64,7 +63,7 @@ public class CommandParser {
      * @return 
      */
     private static boolean validateDeployCommand(String command){
-        Pattern pattern = Pattern.compile("^[a-j](?:[1-9]|10)\\s[vh]$"
+        Pattern pattern = Pattern.compile("^[a-j](?:[1-9]|10)\\s[rd]$"
                 ,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(command);
         return matcher.matches();
