@@ -15,6 +15,15 @@ public class CommandParser {
         
         GameState gameState = GameState.getInstance();
         
+        startParse();
+        
+    }
+    
+    /**
+     * starts a loop that sends commands it reads from the scanline to 
+     * appropriate methods for validation and execution.
+     */
+    private static void startParse(){
         Scanner scanner = new Scanner(System.in);
         boolean isQuitting = false;
         while (!isQuitting) {            
