@@ -31,8 +31,18 @@ public class Printer {
      * the active player, their list of remaining ships, and their current grid.
      */
     public static void printDeploymentInfo() {
-        //print that it is the active player's turn
+        printPlayerTurn();
         //print active player's ship list
         //print active player's own grid
+    }
+    
+    /**
+     * Prints a message stating that it's the currently active player's turn.
+     */
+    public static void printPlayerTurn() {
+        String message = "It is player" 
+                + GameState.getInstance().getActivePlayer().getName()
+                + "'s turn";
+        System.out.println(message);
     }
 }
