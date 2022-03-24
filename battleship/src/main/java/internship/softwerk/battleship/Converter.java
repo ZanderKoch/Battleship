@@ -7,8 +7,8 @@ package internship.softwerk.battleship;
 public class Converter {
     /**
      * Converts an int 1-26 to an uppercase letter String A-J
-     * @param number
-     * @return A String equivalent to the specified int
+     * @param number a number between 1 and 26, inclusive
+     * @return An uppercase 1-lenght String corresponding to the specified int
      */
     static String numberToLetter(int number)  throws IllegalArgumentException{
         String alphabet = "ABCDFEFGHIJKLMNOPQRSTUVWXYZ";
