@@ -1,5 +1,7 @@
 package internship.softwerk.battleship;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -8,6 +10,11 @@ import java.util.HashMap;
  */
 public class Player {
     private final String name;
+    private ArrayList<Integer> shipList = new ArrayList(
+            Arrays.asList(5
+                        , 4, 4
+                        , 3, 3, 3, 3, 3, 3, 3
+                        , 2, 2));
     private HashMap<String,String> myGrid;
     private HashMap<String,String> hitOrMissGrid;
     
