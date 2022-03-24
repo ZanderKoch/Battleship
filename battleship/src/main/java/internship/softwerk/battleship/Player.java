@@ -7,10 +7,12 @@ import java.util.HashMap;
  * @author Zander Koch
  */
 public class Player {
+    private String name;
     private HashMap<String,String> myGrid;
     private HashMap<String,String> hitOrMissGrid;
     
-    public Player(){
+    public Player(String name){
+        this.name = name;
         initializeGrids();
     }
     
