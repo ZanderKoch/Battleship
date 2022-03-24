@@ -15,9 +15,9 @@ public class CommandParser {
         
         GameState gameState = GameState.getInstance();
         
-        //print deployment instructions
+        Printer.printDeploymentInstructions();
         
-        startParse();
+        startParser();
         
     }
     
@@ -25,33 +25,36 @@ public class CommandParser {
      * starts a loop that sends commands it reads from the scanline to 
      * appropriate methods for validation and execution.
      */
-    private static void startParse(){
+    private static void startParser() {
         Scanner scanner = new Scanner(System.in);
         boolean isQuitting = false;
         while (!isQuitting) {            
             String input = scanner.nextLine();
             
+            /*Refactoring: separate everything in this loop into a method that
+            takes the input and returns the new value for isQuitting.
+            this will make it possible to test the quitting functionality*/
             if (input.equalsIgnoreCase("quit")) {
                 isQuitting = true;
                 return;
             }
             
-            /*Refactoring?: maybe the contents of these two statements should be
+            /*Refactoring?: maybe the contents of these  statements should be
             methods*/
             if(isDeploying){
-                //print deployment info (friendly board and available ships)
+                //print deployment info (available ships and friendly board)
                 if (validateDeployCommand(input)) {
                     //deploy a boat
                 } else {
                     //print an error message
                 }
-            } else {
+            } else if(!isDeploying) {
                 if (validateAttackCommand(input)) {
                     //attack a square
                 } else {
                     //print and error message
                 }
-            }
+            }  
         }
     }
     
@@ -62,7 +65,7 @@ public class CommandParser {
      * space followed by v or h. 
      * @return 
      */
-    private static boolean validateDeployCommand(String command){
+    private static boolean validateDeployCommand(String command) {
         Pattern pattern = Pattern.compile("^[a-j](?:[1-9]|10)\\s[rd]$"
                 ,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(command);
@@ -76,7 +79,7 @@ public class CommandParser {
      * inclusive
      * @return 
      */
-    private static boolean validateAttackCommand(String command){
+    private static boolean validateAttackCommand(String command) {
         Pattern pattern = Pattern.compile("^[a-j](?:[1-9]|10)$"
                 ,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(command);

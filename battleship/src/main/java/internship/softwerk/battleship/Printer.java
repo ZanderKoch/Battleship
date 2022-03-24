@@ -5,15 +5,34 @@ package internship.softwerk.battleship;
  * @author Zander Koch
  */
 public class Printer {
-    public static void printIntroduction(){
+    /*would it be a good idea to include the exact message that gets printed in 
+    the javadoc comment?*/
+    
+    /**
+     * prints an introductory message.
+     */
+    public static void printIntroduction() {
         System.out.println("Welcome to Battleships!");
         System.out.println("Type \"quit\" to quit at any time.");
         System.out.println("(all commands are case insensitive)");
     }
     
-    public static void printDeploymentInstructions(){
-        System.out.println("Deploy ships by entering an origin tile and a"
+    /**
+     * prints instructions for deploying ships.
+     */
+    public static void printDeploymentInstructions() {
+        System.out.println("Deploy ships by entering an origin tile and a "
                 + "direction, separated by a space.");
-        System.out.println("(r for right, d for down)");
+        System.out.println("r for right, d for down");
+    }
+    
+    /**
+     * prints all info relevant to deploying a ship. This includes:
+     * the active player, their list of remaining ships, and their current grid.
+     */
+    public static void printDeploymentInfo() {
+        //print that it is the active player's turn
+        //print active player's ship list
+        //print active player's own grid
     }
 }
