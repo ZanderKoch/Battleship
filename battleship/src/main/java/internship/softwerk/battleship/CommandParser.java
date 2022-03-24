@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
  * @author Zander Koch
  */
 public class CommandParser {
+    static boolean isDeploying = true;
     public static void main(String[] args) {
         Printer.printIntroduction();
-        boolean isDeploying = true;
         
         GameState gameState = GameState.getInstance();
         
