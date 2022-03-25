@@ -8,8 +8,8 @@ package internship.softwerk.battleship;
 public class GameState {
     private static GameState instance;
     
-    private static Player player1 = new Player("Player one");
-    private static Player player2 = new Player("Player two");
+    private Player player1 = new Player("Player one");
+    private Player player2 = new Player("Player two");
     private Player activePlayer = player1;
     
 

@@ -87,8 +87,17 @@ public class Printer {
         System.out.println(GRID_HORIZONTAL_LINE);
         
         for (int i = 1; i < 11; i++) {
-            System.out.println(Converter.numberToLetter(i) + "|");
-            
+            String row = Converter.numberToLetter(i) + "|";
+            for (int j = 1; j < 11; j++) {
+                String coordinateLetter = Converter.numberToLetter(i);
+                String coordinateNumber = Integer.toString(j);
+                String coordinate = coordinateLetter + coordinateNumber;
+                
+                String tileSymbol = grid.getOrDefault(coordinate, " ");
+                row += " " + tileSymbol + " |";
+            }
+            System.out.println(row);
+            System.out.println(GRID_HORIZONTAL_LINE);
         }
     }
 }

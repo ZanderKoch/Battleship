@@ -15,8 +15,8 @@ public class Player {
                         , 4, 4
                         , 3, 3, 3, 3, 3, 3, 3
                         , 2, 2));
-    private HashMap<String,String> myGrid;
-    private HashMap<String,String> hitOrMissGrid;
+    private HashMap<String,String> myGrid = new HashMap();
+    private HashMap<String,String> hitOrMissGrid = new HashMap();
     
     public Player(String name){
         this.name = name;
