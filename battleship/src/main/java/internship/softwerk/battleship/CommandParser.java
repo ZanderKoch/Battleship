@@ -10,10 +10,9 @@ import java.util.regex.Pattern;
  */
 public class CommandParser {
     static boolean isDeploying = true;
+    static GameState gameState = GameState.getInstance();
     public static void main(String[] args) {
         Printer.printIntroduction();
-        
-        GameState gameState = GameState.getInstance();
         
         Printer.printDeploymentInstructions();
         Printer.printDeploymentInfo();
