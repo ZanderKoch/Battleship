@@ -8,9 +8,6 @@ import java.util.HashMap;
  * @author Zander Koch
  */
 public class Printer {
-    /*would it be a good idea to include the exact message that gets printed in 
-    the javadoc comment?*/
-    
     private static final String GRID_HEADER =
             "   1   2   3   4   5   6   7   8   9   10";
     private static final String GRID_HORIZONTAL_LINE =
