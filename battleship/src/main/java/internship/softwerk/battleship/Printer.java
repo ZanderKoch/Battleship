@@ -48,7 +48,6 @@ public class Printer {
     }
     
     /**
-<<<<<<< HEAD
      * prints active player's list of ships.
      * 
      */
@@ -60,11 +59,10 @@ public class Printer {
             System.out.println(shipSize);
         }
     }
-=======
-     * prints provided player's list of ships without formatting.
-     * @param player whose ships to print
->>>>>>> a0a72ce8f752e5ee17089bc89d7a9bc7f9c0a55d
-     */
+    /** 
+    * prints provided player's list of ships without formatting.
+    * @param player whose ships to print
+    */
     public static void printPlayerShipList(Player player){
         System.out.println("Ship ships available to deploy listed by type:");
         for()
