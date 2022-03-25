@@ -34,4 +34,8 @@ public class Player {
     public ArrayList<Integer> getShipSizes() {
         return shipSizes;
     }
+
+    public HashMap<String, String> getMyGrid() {
+        return myGrid;
+    }
 }
