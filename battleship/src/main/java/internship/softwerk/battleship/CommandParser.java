@@ -16,6 +16,7 @@ public class CommandParser {
         GameState gameState = GameState.getInstance();
         
         Printer.printDeploymentInstructions();
+        Printer.printDeploymentInfo();
         
         startParser();
         
@@ -42,7 +43,7 @@ public class CommandParser {
             /*Refactoring?: maybe the contents of these  statements should be
             methods*/
             if(isDeploying){
-                //print deployment info (available ships and friendly board)
+                Printer.printDeploymentInfo();
                 if (validateDeployCommand(input)) {
                     //deploy a boat
                 } else {

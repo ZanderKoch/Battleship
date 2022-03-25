@@ -1,5 +1,6 @@
 package internship.softwerk.battleship;
 
+import java.util.ArrayList;
 /**
  * class responsible for all printing of text.
  * @author Zander Koch
@@ -32,8 +33,8 @@ public class Printer {
      */
     public static void printDeploymentInfo() {
         printPlayerTurn();
-        //print active player's ship list
         //print active player's own grid
+        printActivePlayerShipList();
     }
     
     /**
@@ -47,8 +48,17 @@ public class Printer {
     }
     
     /**
-     * prints provided player's list of ships without formatting.
-     * @param player whose ships to print
+     * prints active player's list of ships.
+     * 
+     */
+    private static void printActivePlayerShipList() {
+        System.out.println("Ships available to deploy listed by length:");
+        ArrayList<Integer> shipSizes =
+                GameState.getInstance().getActivePlayer().getShipSizes();
+        for(int shipSize : shipSizes) {
+            System.out.println(shipSize);
+        }
+    }
      */
     public static void printPlayerShipList(Player player){
         System.out.println("Ship ships available to deploy listed by type:");

@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public class Player {
     private final String name;
-    private ArrayList<Integer> shipList = new ArrayList(
+    private ArrayList<Integer> shipSizes = new ArrayList(
             Arrays.asList(5
                         , 4, 4
                         , 3, 3, 3, 3, 3, 3, 3
@@ -29,5 +29,9 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<Integer> getShipSizes() {
+        return shipSizes;
     }
 }
