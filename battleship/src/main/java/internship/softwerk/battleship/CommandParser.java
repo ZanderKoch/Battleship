@@ -44,7 +44,9 @@ public class CommandParser {
             if(isDeploying){
                 Printer.printDeploymentInfo();
                 if (validateDeployCommand(input)) {
-                    //deploy a boat
+                    String coordinate = input.split(" ")[0];
+                    String direction = input.split(" ")[1];
+                    gameState.deploy(coordinate, direction);
                 } else {
                     //print an error message
                 }
@@ -66,7 +68,7 @@ public class CommandParser {
      * @return 
      */
     private static boolean validateDeployCommand(String command) {
-        Pattern pattern = Pattern.compile("^[a-j](?:[1-9]|10)\\s[rd]$"
+        Pattern pattern = Pattern.compile("^[A-J](?:[1-9]|10)\\s[RD]$"
                 ,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(command);
         return matcher.matches();
@@ -80,7 +82,7 @@ public class CommandParser {
      * @return 
      */
     private static boolean validateAttackCommand(String command) {
-        Pattern pattern = Pattern.compile("^[a-j](?:[1-9]|10)$"
+        Pattern pattern = Pattern.compile("^[A-J](?:[1-9]|10)$"
                 ,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(command);
         return matcher.matches();
