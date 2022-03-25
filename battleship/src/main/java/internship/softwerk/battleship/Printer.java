@@ -80,7 +80,7 @@ public class Printer {
      * Prints the values of a HashMap into the appropriate tiles of a 10*10
      * grid, with numbers 1-10 on the horizontal axis and letters A-J on the 
      * vertical. Tiles with no corresponding value get filled with spaces.
-     * @param grid 
+     * @param grid, HashMap with with values 3 letters long or shorter
      */
     private static void printGrid(HashMap<String, String> grid) {
         System.out.println(GRID_HEADER);
