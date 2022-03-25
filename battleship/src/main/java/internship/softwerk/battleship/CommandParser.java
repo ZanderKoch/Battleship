@@ -46,7 +46,7 @@ public class CommandParser {
                 if (validateDeployCommand(input)) {
                     String coordinate = input.split(" ")[0];
                     String direction = input.split(" ")[1];
-                    gameState.deploy(coordinate, direction);
+                    isDeploying = GameState.getInstance().deploy(coordinate, direction);
                 } else {
                     //print an error message
                 }
@@ -86,5 +86,5 @@ public class CommandParser {
                 ,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(command);
         return matcher.matches();
-    }
+    }   
 }

@@ -3,12 +3,17 @@ package internship.softwerk.battleship;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * contains and handles the mutation of a single player's data
  * @author Zander Koch
  */
 public class Player {
+     private static final String SHIP_SYMBOL = "B";
+    
     private final String name;
     private ArrayList<Integer> shipSizes = new ArrayList(
             Arrays.asList(5
@@ -20,11 +25,100 @@ public class Player {
     
     public Player(String name){
         this.name = name;
-        initializeGrids();
     }
     
-    private void initializeGrids(){
+    
+    /**
+     * Adds a ship of the same size as the first number in shipSizes to player's
+     * grid if it fits, prints error message if not.
+     * @param coordinate origin coordinate to deploy at 
+     * @return wether or not the player still has boats to deploy
+     */
+    //Refactoring: split into multiple private methods
+    public boolean deployRight(String coordinate){
+        if (shipSizes.isEmpty()) {
+            return false;
+        }
+        int size = shipSizes.get(0);
         
+        Pattern pattern = Pattern.compile("^([A-J])([1-9]|10)$"
+                ,Pattern.CASE_INSENSITIVE); 
+        Matcher matcher = pattern.matcher(coordinate);
+        matcher.matches();
+        String coordinateLetter = matcher.group(1);
+        int coordinateNumber = Integer.parseInt(matcher.group(2));
+        
+        if ( size > 10 - coordinateNumber) {
+            Printer.printShipBoundsError();
+            return true;
+        }
+        
+        //checking that none of the tiles the ship would go on are taken already
+        for (int i = 0; i < size; i++) {
+            String checkingCoordinate =coordinateLetter
+                    + Integer.toString(coordinateNumber + i);
+            if (myGrid.containsKey(checkingCoordinate)) {
+                //print error saying that deployment is blocked by another ship
+                return true;
+            }
+        }
+        
+        //add key value pairs for all tiles to myGrid
+        for (int i = 0; i < size; i++) {
+            String placeCoordinate = coordinateLetter
+                    + Integer.toString(coordinateNumber + i);
+            myGrid.put(placeCoordinate.toUpperCase(Locale.ENGLISH), SHIP_SYMBOL);
+        }
+        shipSizes.remove(0);
+        //returns true as long as shipsizes has not been emptied
+        return !shipSizes.isEmpty();
+    }
+    
+    /**
+     * Adds a ship of the same size as the first number in shipSizes to player's
+     * grid if it fits, prints error message if not.
+     * @param coordinate origin coordinate to deploy at 
+     * @return wether or not the player still has boats to deploy
+     */
+    //Refactoring: split into multiple private methods
+    public boolean deployDown(String coordinate){
+        if (shipSizes.isEmpty()) {
+            return false;
+        }
+        int size = shipSizes.get(0);
+        
+        Pattern pattern = Pattern.compile("^([A-J])([1-9]|10)$"
+                ,Pattern.CASE_INSENSITIVE); 
+        Matcher matcher = pattern.matcher(coordinate);
+        matcher.matches();
+        String coordinateLetter = matcher.group(1);
+        int coordinateNumber = Integer.parseInt(matcher.group(2));
+        
+        System.out.println("Debug:" + Converter.letterToNumber(coordinateLetter) );
+        if ( size > 10 - Converter.letterToNumber(coordinateLetter)) {
+            Printer.printShipBoundsError();
+            return true;
+        }
+        
+        //checking that none of the tiles the ship would go on are taken already
+        for (int i = 0; i < size; i++) {
+            String checkingCoordinate = coordinateLetter + 
+                    Converter.numberToLetter(coordinateNumber + i);
+            if (myGrid.containsKey(checkingCoordinate)) {
+                //print error saying that deployment is blocked by another ship
+                return true;
+            }
+        }
+        
+        //add key value pairs for all tiles to myGrid
+        for (int i = 0; i < size; i++) {
+            String placeCoordinate = coordinateLetter + 
+                    Converter.numberToLetter(coordinateNumber + i);
+            myGrid.put(placeCoordinate.toUpperCase(Locale.ENGLISH), SHIP_SYMBOL);
+        }
+        shipSizes.remove(0);
+        //returns true as long as shipsizes has not been emptied
+        return !shipSizes.isEmpty();
     }
 
     public String getName() {
