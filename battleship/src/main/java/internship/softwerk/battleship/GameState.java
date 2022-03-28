@@ -52,6 +52,9 @@ public class GameState {
     }
     
     
+    /**
+     * Switches active and inactive players.
+     */
     private void cycleActivePlayer(){
         Player previousActivePlayer = activePlayer;
         activePlayer = inactivePlayer;
