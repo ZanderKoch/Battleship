@@ -71,8 +71,12 @@ public class Printer {
      */
     private static void printActivePlayerGrid() {
         System.out.println("Your grid:");
-        printGrid(GameState.getInstance().getActivePlayer().getMyGrid());
-        
+        printGrid(GameState.getInstance().getActivePlayer().getMyGrid()); 
+    }
+    
+    private static void printActivePlayerHitOrMissGrid() {
+        System.out.println("Known enemy grid:");
+        printGrid(GameState.getInstance().getActivePlayer().getHitOrMissGrid());
     }
     
     /**
@@ -129,5 +133,24 @@ public class Printer {
      */
     public static void printAttackMiss() {
         System.out.println(MISS_SOUND);
+    }
+    
+    /**
+     * prints instructions for the attacking phase of the game.
+     */
+    public static void printAttackingInstructions() {
+        System.out.println("All ships have been deployed, and the players will"
+                + " now begin attacking eachother.");
+        System.out.println("Attack a tile by entering its coordinate. Turns last"
+                + " until the attacking player misses.");
+    }
+    
+    /**
+     * Prints all info relevant to picking a tile to attack.
+     */
+    public static void printAttackInfo() {
+        printPlayerTurn();
+        printActivePlayerHitOrMissGrid();
+        printActivePlayerGrid();
     }
 }

@@ -39,9 +39,11 @@ public class GameState {
             if (activePlayer.equals(player1)) {
                 //switch to player two and print their info
                 cycleActivePlayer();
-                 Printer.printDeploymentInfo();
+                Printer.printDeploymentInfo();
                 return true;
             } else {
+                Printer.printAttackingInstructions();
+                Printer.printAttackInfo();
                 //tell the parser that deployment is done
                 return false;
             }
