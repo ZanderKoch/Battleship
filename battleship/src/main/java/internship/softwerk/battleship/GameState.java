@@ -35,7 +35,7 @@ public class GameState {
         
         if (!shipsRemain) {
             if (activePlayer.equals(player1)) {
-                //cycle players
+                cycleActivePlayer();
                 Printer.printDeploymentInfo();
                 return true;
             } else {
@@ -44,6 +44,14 @@ public class GameState {
         }
         Printer.printDeploymentInfo();
         return true;
+    }
+    
+    
+    private void cycleActivePlayer(){
+        Player previousActivePlayer = activePlayer;
+        activePlayer = inactivePlayer;
+        inactivePlayer = previousActivePlayer;
+        
     }
     
     public static GameState getInstance() {
