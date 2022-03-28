@@ -16,7 +16,7 @@ public class Converter {
      */
     public static String numberToLetter(int number)
             throws IllegalArgumentException {
-        String alphabet = "ABCDFEFGHIJKLMNOPQRSTUVWXYZ";
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         if (number >= 1 && number <= 26) {
             return Character.toString(alphabet.charAt(number - 1));
         }
