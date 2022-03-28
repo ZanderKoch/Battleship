@@ -13,7 +13,8 @@ import java.util.regex.Pattern;
  */
 public class Player {
      private static final String SHIP_SYMBOL = "B";
-     private static final String WRECK_SYMBOL ="X";
+     private static final String WRECK_SYMBOL = "X";
+     private static final String MISS_SYMBOL = "O";
 
     private final String name;
     private ArrayList<Integer> shipSizes = new ArrayList(
@@ -131,7 +132,9 @@ public class Player {
      * @return 
      */
     public boolean attackTile(String coordinate){
-        if (myGrid.get(coordinate).equals(SHIP_SYMBOL)) {
+        if (myGrid.getOrDefault(
+                coordinate.toUpperCase(Locale.ENGLISH), "")
+                .equals(SHIP_SYMBOL)) {
             myGrid.put(coordinate, WRECK_SYMBOL);
             Printer.printAttackHit();
             return true;
