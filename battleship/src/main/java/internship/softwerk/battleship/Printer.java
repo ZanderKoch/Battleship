@@ -12,6 +12,8 @@ public class Printer {
             "   1   2   3   4   5   6   7   8   9   10";
     private static final String GRID_HORIZONTAL_LINE =
             " +---+---+---+---+---+---+---+---+---+---+";
+    private static final String HIT_SOUND ="*Bang!*";
+     private static final String MISS_SOUND ="*Splash!*";
     
     /**
      * prints an introductory message.
@@ -52,7 +54,7 @@ public class Printer {
     }
     
     /**
-     * prints active player's list of ships.
+     * Prints active player's list of ships.
      * 
      */
     private static void printActivePlayerShipList() {
@@ -97,14 +99,35 @@ public class Printer {
             System.out.println(GRID_HORIZONTAL_LINE);
         }
     }
-    
-    public static void printShipBoundsError(){
+    /**
+     * Prints an error message for when the player tries to deploy a ship in a 
+     * way that makes it extend beyond the 10*10 grid.
+     */
+    public static void printShipBoundsError() {
         System.out.println("Error: ship is too big to fit inside the grid from "
                 + "there");
     }
     
-    public static void printShipBlockedError(){
+    /**
+     * Prints an error message for when the player tries to deploy a ship into
+     * tiles that are already occupied by another ship.
+     */
+    public static void printShipBlockedError() {
         System.out.println("Error: ship overlaps with an already placed ship"
                 + " from there");
+    }
+    
+    /**
+     * prints a message for when an attack hits a ship tile.
+     */
+    public static void printAttackHit() {
+        System.out.println(HIT_SOUND);
+    }
+    
+    /**
+     * prints a message for when an attack does not hit a ship tile.
+     */
+    public static void printAttackMiss() {
+        System.out.println(MISS_SOUND);
     }
 }
