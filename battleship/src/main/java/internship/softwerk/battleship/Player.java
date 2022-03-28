@@ -144,7 +144,22 @@ public class Player {
         }
     }
     
-    
+    /**
+     * Updates player's grid of hits and misses on given coordinates with given
+     * boolean indicating wether to add a hit or miss.
+     * @param coordinates tile to update
+     * @param hit wether or not to add a hit or miss
+     */
+    public void updateHitOrMissGrid(String coordinates, boolean hit) {
+        String symbol;
+        if (hit) {
+            symbol = WRECK_SYMBOL;
+        } else {
+            symbol = MISS_SYMBOL;
+        }
+        
+        hitOrMissGrid.put(coordinates.toUpperCase(Locale.ENGLISH), symbol);
+    }
     
     
     public String getName() {
