@@ -173,4 +173,8 @@ public class Player {
     public HashMap<String, String> getMyGrid() {
         return myGrid;
     }
+
+    public HashMap<String, String> getHitOrMissGrid() {
+        return hitOrMissGrid;
+    }
 }
