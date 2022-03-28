@@ -42,6 +42,7 @@ public class GameState {
                 Printer.printDeploymentInfo();
                 return true;
             } else {
+                cycleActivePlayer();
                 Printer.printAttackingInstructions();
                 Printer.printAttackInfo();
                 //tell the parser that deployment is done
