@@ -46,7 +46,7 @@ public class GameState {
                 return false;
             }
         }
-        //keep depoying for the same player
+        //keep deploying for the same player
          Printer.printDeploymentInfo();
         return true;
     }
