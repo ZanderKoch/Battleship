@@ -16,7 +16,6 @@ public class CommandParser {
         
         Printer.printDeploymentInstructions();
         Printer.printDeploymentInfo();
-        
         startParser();
         
     }
@@ -42,7 +41,6 @@ public class CommandParser {
             /*Refactoring?: maybe the contents of these  statements should be
             methods*/
             if(isDeploying){
-                Printer.printDeploymentInfo();
                 if (validateDeployCommand(input)) {
                     String coordinate = input.split(" ")[0];
                     String direction = input.split(" ")[1];
