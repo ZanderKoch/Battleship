@@ -38,8 +38,8 @@ public class Converter {
                 ,Pattern.CASE_INSENSITIVE); 
         Matcher matcher = pattern.matcher(letter);
         if (matcher.matches()) {
-            char character = letter.charAt(0);
-            return character - 40;
+            char character = Character.toUpperCase(letter.charAt(0));
+            return character - 64;
         }
         throw new IllegalArgumentException(letter + "is not a singular number"
                 + "and can not be converted");
