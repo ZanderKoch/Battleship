@@ -50,7 +50,7 @@ public class CommandParser {
                 }
             } else if(!isDeploying) {
                 if (validateAttackCommand(input)) {
-                    //attack a square
+                    GameState.getInstance().attack(input);
                 } else {
                     //print and error message
                 }

@@ -51,6 +51,20 @@ public class GameState {
         return true;
     }
     
+    /**
+     * Makes active player attack the given tile of the inactive player's grid.
+     * @param coordinate coordinate to attack
+     */
+    public void attack(String coordinate){
+        boolean hit = inactivePlayer.attackTile(coordinate);
+        System.out.println("Hit: " + hit);
+        activePlayer.updateHitOrMissGrid(coordinate, hit);
+        if (!hit) {
+            cycleActivePlayer();
+        }
+        Printer.printAttackInfo();
+        return;
+    }
     
     /**
      * Switches active and inactive players.
@@ -61,11 +75,7 @@ public class GameState {
         inactivePlayer = previousActivePlayer;
         
     }
-    
-    public void attack(String coordinate){
-        
-    }
-    
+
     public static GameState getInstance() {
         if (instance == null) {
             instance = new GameState();
@@ -75,5 +85,5 @@ public class GameState {
 
     public Player getActivePlayer() {
         return activePlayer;
-    }    
+    }
 }
