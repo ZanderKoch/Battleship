@@ -13,7 +13,8 @@ import java.util.regex.Pattern;
  */
 public class Player {
      private static final String SHIP_SYMBOL = "B";
-    
+     private static final String WRECK_SYMBOL ="X";
+
     private final String name;
     private ArrayList<Integer> shipSizes = new ArrayList(
             Arrays.asList(5
