@@ -122,7 +122,28 @@ public class Player {
         //returns true as long as shipSizes has not been emptied
         return !shipSizes.isEmpty();
     }
-
+    
+    /**
+     * Attacks the given tile on the players grid, replacing hit ship tiles with
+     * an X, and returns true for a hit and false for a miss
+     * 
+     * @param coordinate
+     * @return 
+     */
+    public boolean attackTile(String coordinate){
+        if (myGrid.get(coordinate).equals(SHIP_SYMBOL)) {
+            myGrid.put(coordinate, WRECK_SYMBOL);
+            Printer.printAttackHit();
+            return true;
+        } else {
+            Printer.printAttackMiss();
+            return false;
+        }
+    }
+    
+    
+    
+    
     public String getName() {
         return name;
     }
