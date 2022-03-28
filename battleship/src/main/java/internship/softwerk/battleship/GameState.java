@@ -57,7 +57,6 @@ public class GameState {
      */
     public void attack(String coordinate){
         boolean hit = inactivePlayer.attackTile(coordinate);
-        System.out.println("Hit: " + hit);
         activePlayer.updateHitOrMissGrid(coordinate, hit);
         if (!hit) {
             cycleActivePlayer();
