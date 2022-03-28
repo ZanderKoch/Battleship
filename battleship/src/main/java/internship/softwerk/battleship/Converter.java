@@ -41,7 +41,7 @@ public class Converter {
             char character = Character.toUpperCase(letter.charAt(0));
             return character - 64;
         }
-        throw new IllegalArgumentException(letter + "is not a singular number"
+        throw new IllegalArgumentException(letter + "is not a singular letter"
                 + "and can not be converted");
     }
 }
