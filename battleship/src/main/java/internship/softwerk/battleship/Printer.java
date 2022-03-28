@@ -45,7 +45,7 @@ public class Printer {
      * Prints a message stating that it's the currently active player's turn.
      */
     public static void printPlayerTurn() {
-        String message = "It is player" 
+        String message = "It is " 
                 + GameState.getInstance().getActivePlayer().getName()
                 + "'s turn";
         System.out.println(message);
@@ -96,5 +96,15 @@ public class Printer {
             System.out.println(row);
             System.out.println(GRID_HORIZONTAL_LINE);
         }
+    }
+    
+    public static void printShipBoundsError(){
+        System.out.println("Error: ship is too big to fit inside the grid from "
+                + "there");
+    }
+    
+    public static void printShipBlockedError(){
+        System.out.println("Error: ship overlaps with an already placed ship"
+                + " from there");
     }
 }
