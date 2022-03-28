@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  */
 public class Converter {
     /**
-     * Converts an int 1-26 to an uppercase letter String A-J
+     * Converts an int 1-26 to an uppercase letter String A-J.
      * @param number a number between 1 and 26, inclusive
      * @return An uppercase 1-lenght String corresponding to the specified int
      * @throws IllegalArgumentException
@@ -26,7 +26,7 @@ public class Converter {
     
     /**
      * Converts a 1-lenght String to the number representing its position in the
-     * alphabet
+     * alphabet.
      * @param letter String to convert, must be a letter A-Z and 1-lenght
      * @return number representing the letter's position in the alphabet, so 
      * A = 1, B = 2, and so on
