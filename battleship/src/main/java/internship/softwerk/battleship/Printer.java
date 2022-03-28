@@ -122,6 +122,15 @@ public class Printer {
     }
     
     /**
+     * Prints an error message informing the player that the command they 
+     * entered is invalid
+     */
+    public static void printInvalidCommandError() {
+        System.out.println("Error: that's not a valid command in the given "
+                + "context");
+    }
+    
+    /**
      * prints a message for when an attack hits a ship tile.
      */
     public static void printAttackHit() {
