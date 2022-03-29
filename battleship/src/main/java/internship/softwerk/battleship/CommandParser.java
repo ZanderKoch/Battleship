@@ -46,13 +46,13 @@ public class CommandParser {
                     String direction = input.split(" ")[1];
                     isDeploying = GameState.getInstance().deploy(coordinate, direction);
                 } else {
-                    //print an error message
+                    Printer.printInvalidCommandError();
                 }
             } else if(!isDeploying) {
                 if (validateAttackCommand(input)) {
                     GameState.getInstance().attack(input);
                 } else {
-                    //print and error message
+                    Printer.printInvalidCommandError();
                 }
             }  
         }
